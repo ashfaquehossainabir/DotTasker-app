@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Project Creator: Ashfaque Hossain Abir 
+  -- Github Id: https://github.com/ashfaquehossainabir 
+  -- Email: ashfaquehossain300@gmail.com
+-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Todo List App - A.H. Abir | Executing The Code</title>
+
+    <!-- CSS Source -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon CDN -->
+    <link rel="icon" href="images/fav_icon.svg">
+
+    <!-- Primary Meta Tag -->
+    <meta name="title" content="Todox App - Create you tasks">
+    <meta name="description" content="The fastest way to get tasks out of your head. Type just about anything into the task field and create your todo-lists.">
+
+    <!-- Iconscout Link For Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  </head>
+  <body>
+    <!-- Username Submission Popup -->
+    <div id="overlay">
+      <div class="user-popup">
+        <button id="close">&times;</button>
+        <h2>Welcome to Todox App</h2>
+        <p>Type your name and click on submit. <br> (Maximum limit: 16 characters)</p>
+        <p>User Name:</p>
+        <input type="text" id="userInput" placeholder="Type your name here" maxlength="16">
+        <a class="submitBtn" onclick="submit()">Submit</a>
+      </div>
+    </div>
+
+    <!-- Todo List Dashboard -->
+    <div class="header-wrapper">
+      <h1>Welcome to your Todo lists</h1>
+      <h2 id="greet"></h2>
+      <h3><span class="hour_num">10</span>:<span class="min_num">30</span><!-- :<span class="sec_num">00</span> -->  <span class="am_pm">AM</span></h3>
+      <p class="header-time" data-header-time>Saturday, July 2</p>
+    </div>
+    <div class="wrapper">
+      <div class="task-input">
+        <img src="images/bars-icon.svg" alt="icon">
+        <input type="text" placeholder="Add a new task">
+      </div>
+      <div class="controls">
+        <div class="filters">
+          <span class="active" id="all">All</span>
+          <span id="pending">Pending</span>
+          <span id="completed">Completed</span>
+        </div>
+        <button class="clear-btn">Clear All</button>
+      </div>
+      <ul class="task-box"></ul>
+    </div>
+
+    <!-- JS Source -->
+    <script src="js/script.js"></script>
+
+  </body>
+</html>
