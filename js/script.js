@@ -268,9 +268,11 @@ function editTask(taskId, textName) {
 
 function deleteTask(deleteId, filter) {
     isEditTask = false;
-    todos.splice(deleteId, 1);
-    localStorage.setItem("todo-list", JSON.stringify(todos));
-    showTodo(filter);
+    if(confirm("Are you sure, you want to delete this task?") == true) {
+      todos.splice(deleteId, 1);
+      localStorage.setItem("todo-list", JSON.stringify(todos));
+      showTodo(filter);
+    }
 }
 
 clearAll.addEventListener("click", () => {
