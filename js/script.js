@@ -248,9 +248,9 @@ function showMenu(selectedTask) {
 function updateStatus(selectedTask) {
     let taskName = selectedTask.parentElement.lastElementChild;
     if(selectedTask.checked) {
-        taskName.classList.add("checked");
-        todos[selectedTask.id].status = "completed";
         taskCompleteSound.play();  // Task Complete Sound will play after clicking checked button
+        taskName.classList.add("checked");
+        todos[selectedTask.id].status = "completed";  
     } else {
         taskName.classList.remove("checked");
         todos[selectedTask.id].status = "pending";
@@ -277,9 +277,11 @@ function deleteTask(deleteId, filter) {
 
 clearAll.addEventListener("click", () => {
     isEditTask = false;
-    todos.splice(0, todos.length);
-    localStorage.setItem("todo-list", JSON.stringify(todos));
-    showTodo()
+    if(confirm("Are you sure, you want to delete all tasks?") == true) {
+      todos.splice(0, todos.length);
+      localStorage.setItem("todo-list", JSON.stringify(todos));
+      showTodo()
+    }
 });
 
 taskInput.addEventListener("keyup", e => {
